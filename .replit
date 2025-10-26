@@ -30,27 +30,47 @@ args = "cp public/ads.txt dist/"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "cp public/robots.txt dist/"
+args = "cp public/robots.txt dist/ 2>/dev/null || true"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "echo \"Build complete! Files ready for GitHub Pages.\""
+args = "echo \"✅ Build complete! Files ready for GitHub Pages.\""
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "echo \"Next steps:\""
+args = "echo \"\""
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "echo \"1. Commit and push the 'dist' folder to your GitHub repository\""
+args = "echo \"📋 Deployment Steps:\""
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "echo \"2. In GitHub Settings > Pages, set source to 'Deploy from a branch'\""
+args = "echo \"1. Push kode ke GitHub repository Anda\""
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "echo \"3. Select the branch containing 'dist' folder and '/dist' as the folder\""
+args = "echo \"2. Di GitHub Settings > Pages:\""
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "echo \"   - Source: 'GitHub Actions' (RECOMMENDED) atau 'Deploy from branch'\""
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "echo \"   - Jika pakai branch: pilih branch dan folder '/dist'\""
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "echo \"3. Website akan live di: https://freedownloader.github.io/\""
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "echo \"\""
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "echo \"📁 Build output ada di folder 'dist/'\""
 
 [deployment]
 build = ["npm", "run", "build"]
