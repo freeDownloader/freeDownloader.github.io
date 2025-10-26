@@ -31,3 +31,11 @@ args = "cp public/ads.txt dist/"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "echo \"Build complete! Files are in the 'dist' directory ready for GitHub Pages deployment.\""
+
+[deployment]
+build = ["npm", "run", "build"]
+publicDir = "dist"
+
+[[deployment.rewrites]]
+from = "/*"
+to = "/index.html"
