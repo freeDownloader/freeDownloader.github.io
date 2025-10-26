@@ -30,7 +30,27 @@ args = "cp public/ads.txt dist/"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "echo \"Build complete! Files are in the 'dist' directory ready for GitHub Pages deployment.\""
+args = "cp public/robots.txt dist/"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "echo \"Build complete! Files ready for GitHub Pages.\""
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "echo \"Next steps:\""
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "echo \"1. Commit and push the 'dist' folder to your GitHub repository\""
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "echo \"2. In GitHub Settings > Pages, set source to 'Deploy from a branch'\""
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "echo \"3. Select the branch containing 'dist' folder and '/dist' as the folder\""
 
 [deployment]
 build = ["npm", "run", "build"]
